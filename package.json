@@ -1,0 +1,33 @@
+{
+  "name": "responsive-containers-react",
+  "version": "1.0.0",
+  "description": "Responsive containers for React",
+  "main": "entry/entry.js",
+  "scripts": {
+    "start": "npm run open",
+    "open": "webpack-dev-server --config ./dev/src/webpack.config.js --open",
+    "build-dev-global": "webpack --config ./dev/global/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrey-brill/responsive-containers-react"
+  },
+  "author": "Andrey Brill <andrey@a-brill.com> (https://github.com/andrey-brill)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrey-brill/responsive-containers-react/issues"
+  },
+  "homepage": "https://github.com/andrey-brill/responsive-containers-react",
+  "keywords": [
+    "responsive",
+    "containers",
+    "pixel",
+    "react"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "a-bundle": "^1.0.2",
+    "react": "^16.13.1",
+    "responsive-containers": "^1.0.2"
+  }
+}
