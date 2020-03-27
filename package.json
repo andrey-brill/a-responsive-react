@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run open",
     "open": "webpack-dev-server --config ./dev/src/webpack.config.js --open",
+    "prepare": "npm run build-dev-global",
     "build-dev-global": "webpack --config ./dev/global/webpack.config.js"
   },
   "repository": {
@@ -24,10 +25,16 @@
     "pixel",
     "react"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "react-dom": "^16.13.1"
+  },
   "dependencies": {
     "a-bundle": "^1.0.2",
     "react": "^16.13.1",
-    "responsive-containers": "^1.0.2"
+    "responsive-containers": "^1.1.0"
   }
 }

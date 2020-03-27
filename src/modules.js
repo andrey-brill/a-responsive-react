@@ -8,4 +8,4 @@ const MODULES = {
     'responsive-containers': ResponsiveContainers
 }
 
-export default MODULES;
+export { MODULES };

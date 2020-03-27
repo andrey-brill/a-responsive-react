@@ -4,9 +4,9 @@ import MODULES from '../src/modules.js';
 import CHUNK_NAME from '../src/chunk-name.js';
 
 
-const chunk = new Chunk();
-chunk.putAll(MODULES);
+const AChunk = new Chunk();
+AChunk.putAll(MODULES);
 
-ABundle.put(CHUNK_NAME, chunk);
+ABundle.put(CHUNK_NAME, AChunk);
 
-export default chunk;
+export { AChunk };

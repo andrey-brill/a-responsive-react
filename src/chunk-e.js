@@ -1,5 +1,5 @@
 
-import CHUNK_NAME from './chunk-name.js';
+import { CHUNK_NAME } from './chunk-name.js';
 import { ABundle } from 'a-bundle';
 
 
