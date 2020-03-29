@@ -1,5 +1,5 @@
 
-import { React, ResponsiveContainers } from '../chunk-e';
+import { React, AResponsiveContainers } from '../chunk-e';
 import { ResponsiveContext } from '../context/ResponsiveContext';
 
 
@@ -10,7 +10,7 @@ export class ResponsiveContainer extends React.Component {
   render () {
 
     let { container } = this.props;
-    container = container.isResponsiveContainer ? container : new ResponsiveContainers.Container(this.props.container);
+    container = container.isResponsiveContainer ? container : new AResponsiveContainers.Container(this.props.container);
 
     if (!this.context) {
       throw new Error('Parent container is undefined');

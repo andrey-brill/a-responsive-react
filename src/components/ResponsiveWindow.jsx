@@ -1,5 +1,5 @@
 
-import { React, ResponsiveContainers } from '../chunk-e';
+import { React, AResponsiveContainers } from '../chunk-e';
 import { ResponsiveContext } from '../context/ResponsiveContext';
 
 
@@ -26,7 +26,7 @@ export class ResponsiveWindow extends React.Component {
 
     let { name, rcResize, rxResize } = this.props;
 
-    this.windowContainer = new ResponsiveContainers.WindowContainer({
+    this.windowContainer = new AResponsiveContainers.WindowContainer({
       name,
       rcResize,
       rxResize,

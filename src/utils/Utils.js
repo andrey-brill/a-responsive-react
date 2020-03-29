@@ -1,10 +1,10 @@
 
-import { ResponsiveContainers } from '../chunk-e';
+import { AResponsiveContainers } from '../chunk-e';
 
 
 export function createRo (roCreator, roResize) {
 
-    const ro = isFunction(roCreator) ? roCreator(ResponsiveContainers.rv) : roCreator;
+    const ro = isFunction(roCreator) ? roCreator(AResponsiveContainers.rv) : roCreator;
 
     if (!roResize) {
         return ro;

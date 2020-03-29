@@ -1,11 +1,11 @@
 
 import React from 'react';
-import * as ResponsiveContainers from 'responsive-containers';
+import * as AResponsiveContainers from 'a-responsive-containers';
 
 
 const MODULES = {
     react: React,
-    'responsive-containers': ResponsiveContainers
+    'a-responsive-containers': AResponsiveContainers
 }
 
 export { MODULES };

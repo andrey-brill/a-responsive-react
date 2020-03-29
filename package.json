@@ -1,5 +1,5 @@
 {
-  "name": "responsive-containers-react",
+  "name": "a-responsive-react",
   "version": "1.0.0",
   "description": "Responsive containers for React",
   "main": "entry/entry.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andrey-brill/responsive-containers-react"
+    "url": "https://github.com/andrey-brill/a-responsive-react"
   },
   "author": "Andrey Brill <andrey@a-brill.com> (https://github.com/andrey-brill)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andrey-brill/responsive-containers-react/issues"
+    "url": "https://github.com/andrey-brill/a-responsive-react/issues"
   },
-  "homepage": "https://github.com/andrey-brill/responsive-containers-react",
+  "homepage": "https://github.com/andrey-brill/a-responsive-react",
   "keywords": [
     "responsive",
     "containers",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "a-bundle": "^1.0.2",
-    "react": "^16.13.1",
-    "responsive-containers": "^1.1.0"
+    "a-responsive-containers": "^1.0.0",
+    "react": "^16.13.1"
   }
 }
