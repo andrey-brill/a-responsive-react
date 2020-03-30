@@ -1,6 +1,6 @@
 
 import { React, AResponsiveContainers } from '../chunk-e';
-import { ResponsiveContext } from '../context/ResponsiveContext';
+import { ResponsiveContext } from '../context/ResponsiveContext.jsx';
 
 
 export class ResponsiveWindow extends React.Component {
@@ -11,7 +11,7 @@ export class ResponsiveWindow extends React.Component {
 
   render () {
 
-    if (!this.state.initialized || this.props.children.length === 0) {
+    if (!this.state.initialized) {
       return (null);
     }
 

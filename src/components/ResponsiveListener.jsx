@@ -1,7 +1,7 @@
 
 
 import { React } from '../chunk-e';
-import { ResponsiveContext } from '../context/ResponsiveContext';
+import { ResponsiveContext } from '../context/ResponsiveContext.jsx';
 import { createRo } from '../utils/Utils';
 
 

@@ -1,6 +1,6 @@
 
 import { React, AResponsiveContainers } from '../chunk-e';
-import { ResponsiveContext } from '../context/ResponsiveContext';
+import { ResponsiveContext } from '../context/ResponsiveContext.jsx';
 
 
 export class ResponsiveContainer extends React.Component {
