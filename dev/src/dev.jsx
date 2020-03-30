@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 
 const React = AChunk.get('react');
 const AResponsiveContainers = AChunk.get('a-responsive-containers');
-const { commonContainerProperties, createPrefixedProperties, commonRxProperties } = AResponsiveContainers;
 
 const isEnoughSpaceRv = AResponsiveContainers.rv.is(65, '<=', '50w');
 
@@ -24,7 +23,7 @@ const container = {
  }
 
 const ro = {
-    MenuHeight: '12R',
+    gMenuHeight: '12R',
     onResize: function (rp, calc) {
         const enough = calc(isEnoughSpaceRv);
         rp.gColumnsContainerDirection = enough ? 'row' : 'column';
@@ -66,7 +65,7 @@ const IFramePanel = () => (
 const App = () => (
     <ResponsiveWindow>
         <ResponsiveContainer container={container}>
-            <ResponsiveElement id="app" roCreator={createPrefixedProperties(commonContainerProperties(commonRxProperties(ro)))}>
+            <ResponsiveElement id="app" roCreator={AResponsiveContainers.commonProperties(ro)}>
                 <div className="menu">
                     <div className="content-container">
                         <div className="content menu-items-container">

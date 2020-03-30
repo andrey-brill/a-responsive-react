@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "a-bundle": "^1.0.2",
-    "a-responsive-containers": "^1.0.0",
+    "a-responsive-containers": "^1.0.1",
     "react": "^16.13.1"
   }
 }
