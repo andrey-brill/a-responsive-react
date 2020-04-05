@@ -4,7 +4,7 @@ import { CHUNK_NAME } from '../../src/chunk-name.js';
 
 
 const AChunk = new Chunk();
-AChunk.putAll(window.modules);
+AChunk.putAll(window.Modules.default);
 
 ABundle.put(CHUNK_NAME, AChunk);
 

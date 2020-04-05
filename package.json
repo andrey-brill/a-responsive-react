@@ -5,9 +5,11 @@
   "main": "entry/entry.js",
   "scripts": {
     "start": "npm run open",
-    "open": "webpack-dev-server --config ./dev/src/webpack.config.js --open",
-    "prepare": "npm run build-dev-global",
-    "build-dev-global": "webpack --config ./dev/global/webpack.config.js"
+    "open": "webpack-dev-server --env.mode development --config ./examples/src/webpack.config.js --open",
+    "prepare": "npm run prepare-examples",
+    "prepare-examples": "webpack --config ./examples/modules/webpack.config.js --env.mode development",
+    "build-examples-modules": "webpack --config ./examples/modules/webpack.config.js --env.mode production",
+    "build-examples": "npm run build-examples-modules && webpack --config ./examples/src/webpack.config.js --env.mode production"
   },
   "repository": {
     "type": "git",
@@ -25,14 +27,7 @@
     "pixel",
     "react"
   ],
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/preset-react": "^7.9.4",
-    "babel-loader": "^8.1.0",
-    "react-dom": "^16.13.1"
-  },
+  "devDependencies": {},
   "dependencies": {
     "a-bundle": "^1.0.2",
     "a-responsive-containers": "^1.0.1",

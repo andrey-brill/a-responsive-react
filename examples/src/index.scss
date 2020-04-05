@@ -32,15 +32,19 @@ html, body {
     flex-direction: row;
     height: var(--gMenuHeight);
     align-items: center;
+
+    .menu-item {
+
+        padding: 0 var(--gPadding);
+
+        &:first-child {
+            flex: 1;
+        }
+    }
+
 }
 
-.menu-item {
-    padding: 0 var(--gPadding);
-}
 
-.menu-item:first-child {
-    flex: 1;
-}
 
 html.no-scrollbar body::-webkit-scrollbar {
     display: none;

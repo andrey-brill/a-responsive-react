@@ -5,3 +5,4 @@
 .gitignore
 dev
 node_modules
+docs

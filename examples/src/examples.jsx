@@ -2,6 +2,8 @@
 import { AChunk } from './chunk-i.js';
 import { ResponsiveWindow, ResponsiveElement, ResponsiveContainer } from '../../src/index.js';
 import ReactDOM from 'react-dom';
+import './index.scss';
+
 
 const React = AChunk.get('react');
 const AResponsiveContainers = AChunk.get('a-responsive-containers');
