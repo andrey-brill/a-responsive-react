@@ -4,7 +4,7 @@ const { spa } = require('a-webpack-configs');
 
 module.exports = (env) => spa(env, {
 
-    entryPath: './examples/src/examples.jsx',
+    entryPath: './examples/@src/examples.jsx',
     productionPath: './docs',
     developmentPath: './examples/spa',
 
@@ -15,6 +15,7 @@ module.exports = (env) => spa(env, {
 
     plugins: {
         scss: true,
+        babel: true,
         react: true,
         copy: true
     }

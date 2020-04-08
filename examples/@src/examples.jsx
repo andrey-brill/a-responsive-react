@@ -1,6 +1,6 @@
 
 import { AChunk } from './chunk-i.js';
-import { ResponsiveWindow, ResponsiveElement, ResponsiveContainer } from '../../src/index.js';
+import { ResponsiveWindow, ResponsiveElement, ResponsiveContainer } from '../../@src/index.js';
 import ReactDOM from 'react-dom';
 import './index.scss';
 

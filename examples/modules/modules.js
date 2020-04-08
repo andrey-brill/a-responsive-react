@@ -1,5 +1,5 @@
 
-import { MODULES } from '../../src/modules.js';
+import { MODULES } from '../../@src/modules.js';
 
 
 export default MODULES;

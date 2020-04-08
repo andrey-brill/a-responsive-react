@@ -1,15 +1,14 @@
 {
   "name": "a-responsive-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Responsive containers for React",
   "main": "entry/entry.js",
   "scripts": {
     "start": "npm run open",
-    "open": "webpack-dev-server --env.mode development --config ./examples/src/webpack.config.js --open",
-    "prepare": "npm run prepare-examples",
-    "prepare-examples": "webpack --config ./examples/modules/webpack.config.js --env.mode development",
-    "build-examples-modules": "webpack --config ./examples/modules/webpack.config.js --env.mode production",
-    "build-examples": "npm run build-examples-modules && webpack --config ./examples/src/webpack.config.js --env.mode production"
+    "open": "webpack-dev-server --env.mode development --config ./examples/@src/webpack.config.js --open",
+    "prepare-modules": "webpack --config ./examples/modules/webpack.config.js --env.mode development",
+    "build-modules": "webpack --config ./examples/modules/webpack.config.js --env.mode production",
+    "build-examples": "npm run build-modules && webpack --config ./examples/@src/webpack.config.js --env.mode production"
   },
   "repository": {
     "type": "git",
@@ -29,8 +28,8 @@
   ],
   "devDependencies": {},
   "dependencies": {
-    "a-bundle": "^1.0.2",
-    "a-responsive-containers": "^1.0.1",
+    "a-bundle": "^1.0.3",
+    "a-responsive-containers": "^1.0.2",
     "react": "^16.13.1"
   }
 }

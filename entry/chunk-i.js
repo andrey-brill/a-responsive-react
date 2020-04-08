@@ -1,7 +1,7 @@
 
 import { ABundle, Chunk } from 'a-bundle';
-import { MODULES } from '../src/modules.js';
-import { CHUNK_NAME } from '../src/chunk-name.js';
+import { MODULES } from '../@src/modules.js';
+import { CHUNK_NAME } from '../@src/chunk-name.js';
 
 
 const AChunk = new Chunk();
