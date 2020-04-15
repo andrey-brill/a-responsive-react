@@ -11,11 +11,12 @@ export class ResponsiveListener extends React.Component {
 
   render () {
 
-    if (this.props.children.length === 0) {
-      return (null);
+    const { children } = this.props;
+    if (children && children.length > 0) {
+      return children;
     }
 
-    return this.props.children;
+    return (null);
   }
 
   componentDidMount () {
