@@ -1,6 +1,6 @@
 {
   "name": "a-responsive-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Responsive containers for React",
   "main": "entry/entry.js",
   "scripts": {
@@ -28,7 +28,7 @@
   ],
   "devDependencies": {},
   "dependencies": {
-    "a-bundle": "^1.0.4",
+    "a-bundle": "^1.0.3",
     "a-responsive-containers": "^1.0.4",
     "react": "^16.13.1"
   }
