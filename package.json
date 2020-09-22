@@ -29,7 +29,7 @@
   "devDependencies": {},
   "dependencies": {
     "a-bundle": "^1.0.3",
-    "a-responsive-containers": "^1.1.0",
+    "a-responsive-containers": "^2.0.0",
     "react": "^16.13.1"
   }
 }

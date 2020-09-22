@@ -7,6 +7,7 @@ module.exports = (env) => umd(env, {
     productionPath: './docs',
     developmentPath: './examples/spa',
     plugins: {
-        clean: true
+        clean: true,
+        babel: true
     }
 });
