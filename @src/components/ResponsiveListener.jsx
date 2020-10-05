@@ -24,6 +24,10 @@ export class ResponsiveListener extends React.Component {
     const { roCreator, roResize } = this.props;
     const ro = createRo(roCreator, roResize);
 
+    if (!this.context) {
+        throw new Error('Responsive listener is not in any responsive container');
+    }
+
     this.unsubscriber = this.context.register(ro);
   }
 

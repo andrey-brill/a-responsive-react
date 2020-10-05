@@ -32,6 +32,10 @@ class ResponsiveComponent extends React.Component {
       that.setState({ renderCounter: (that.state.renderCounter + 1) });
     }
 
+    if (!this.context) {
+        throw new Error('Responsive component is not in any responsive container');
+    }
+
     const ro = createRo(this.props.roCreator, roResize);
     this.unsubscriber = this.context.register(ro);
   }

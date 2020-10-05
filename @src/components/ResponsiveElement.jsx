@@ -24,6 +24,10 @@ export class ResponsiveElement extends React.Component {
 
   componentDidMount () {
 
+    if (!this.context) {
+        throw new Error('Responsive element is not in any responsive container');
+    }
+
     const { roCreator, roResize } = this.props;
     const ro = createRo(roCreator, roResize);
 

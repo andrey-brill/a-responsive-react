@@ -1,6 +1,6 @@
 
 import { AChunk } from './chunk-i.js';
-import { ResponsiveWindow, ResponsiveElement, ResponsiveContainer } from '../../@src/index.js';
+import { ResponsiveElement, ResponsiveContainer } from '../../@src/index.js';
 import ReactDOM from 'react-dom';
 import './index.scss';
 
@@ -8,29 +8,7 @@ import './index.scss';
 const React = AChunk.get('react');
 const AResponsiveContainers = AChunk.get('a-responsive-containers');
 
-const isEnoughSpaceRv = AResponsiveContainers.rv.is(65, '<=', '50w');
-
-const container = {
-    rcResize: AResponsiveContainers.rcResize,
-    rxResize: (parentDimensions, calc) => {
-
-        const dimensions = AResponsiveContainers.rcResize(parentDimensions);
-
-        if (calc(isEnoughSpaceRv)) {
-            dimensions.width = dimensions.width / 2;
-        }
-
-        return dimensions;
-    }
- }
-
-const ro = {
-    gMenuHeight: '12R',
-    onResize: function (rp, calc) {
-        const enough = calc(isEnoughSpaceRv);
-        rp.gColumnsContainerDirection = enough ? 'row' : 'column';
-    }
-};
+AResponsiveContainers.initializeWebContext();
 
 const TextPanel = () => (
     <div className="column">
@@ -64,10 +42,31 @@ const IFramePanel = () => (
     </div>
 );
 
+const windowRp = Object.assign(AResponsiveContainers.commonProperties(AResponsiveContainers.WindowPrefix), {
+    onResize: (rp) => {
+        const { wuw100: width, wuh100: height } = rp;
+        const responsiveColumn = AResponsiveContainers.toResponsiveColumn(width, height);
+        rp.wColumnsContainerDirection = responsiveColumn.numberOfColumns > 1 ? 'row' : 'column';
+    }
+});
+
+const rootRp = Object.assign(AResponsiveContainers.commonProperties(), {
+    rMenuHeight: '96rx'
+});
+
+const onParent = (parentContainer, container) => parentContainer.register({
+    width: '100uw',
+    height: '100uh',
+    onResize: (ro) => {
+        const responsiveColumn = AResponsiveContainers.toResponsiveColumn(ro.width, ro.height);
+        container.resize(responsiveColumn.width, responsiveColumn.height);
+    }
+})
+
 const App = () => (
-    <ResponsiveWindow>
-        <ResponsiveContainer container={container}>
-            <ResponsiveElement id="app" roCreator={AResponsiveContainers.commonProperties(ro)}>
+    <ResponsiveContainer top={true} listenResizeOf={document.body} roCreator={windowRp}>
+        <ResponsiveContainer onParent={onParent}>
+            <ResponsiveElement id="root" roCreator={rootRp}>
                 <div className="menu">
                     <div className="content-container">
                         <div className="content menu-items-container">
@@ -84,10 +83,11 @@ const App = () => (
                 </div>
             </ResponsiveElement>
         </ResponsiveContainer>
-    </ResponsiveWindow>
+    </ResponsiveContainer>
 );
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+// must be window.body for now
+ReactDOM.render(<App/>, document.body);
 
 if (isInIframe()) {
     document.head.parentElement.classList.add('no-scrollbar');

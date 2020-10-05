@@ -26,10 +26,12 @@
     "pixel",
     "react"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "a-webpack-configs": "^2.1.2"
+  },
   "dependencies": {
     "a-bundle": "^1.0.3",
-    "a-responsive-containers": "^2.0.0",
+    "a-responsive-containers": "^3.2.0",
     "react": "^16.13.1"
   }
 }

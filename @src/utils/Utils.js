@@ -19,6 +19,6 @@ export function createRo (roCreator, roResize) {
     return ro;
 }
 
-function isFunction (obj) {
+export function isFunction (obj) {
     return !!(obj && obj.constructor && obj.call && obj.apply);
 }

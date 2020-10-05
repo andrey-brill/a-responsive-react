@@ -1,50 +1,60 @@
+@import 'a-responsive-containers/entry/responsive.scss';
+
 
 html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: #333333;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
-#app {
-    font-size: var(--gText);
-    margin-top: var(--gMenuHeight);
+#root {
+
+    @include fixedSize(ww(), calc(wh() - var(--rMenuHeight)));
+
+    font-size: T1();
+    margin-top: var(--rMenuHeight);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
 }
 
 .content {
-    max-width: var(--g100cw);
+    max-width: rw(200);
     margin: auto;
 }
 
 .menu {
     position: fixed;
-    width: 100vw;
+    width: ww();
+    height: var(--rMenuHeight);
     left: 0;
     top: 0;
-    height: var(--gMenuHeight);
     background-color: teal;
     color: whitesmoke;
-    font-size: var(--gH6);
+    font-size: H6();
 }
 
 .menu-items-container {
     display: flex;
     flex-direction: row;
-    height: var(--gMenuHeight);
+    height: var(--rMenuHeight);
     align-items: center;
-
-    .menu-item {
-
-        padding: 0 var(--gPadding);
-
-        &:first-child {
-            flex: 1;
-        }
-    }
-
 }
 
+.menu-item {
+    padding: 0 pad();
+}
 
+.menu-item:first-child {
+    flex: 1;
+}
 
 html.no-scrollbar body::-webkit-scrollbar {
     display: none;
@@ -52,33 +62,38 @@ html.no-scrollbar body::-webkit-scrollbar {
 
 .columns-container {
     display: flex;
-    flex-direction: var(--gColumnsContainerDirection);
+    flex-direction: var(--wColumnsContainerDirection);
 }
 
 .column {
     flex: 1;
-    padding: var(--gPadding2x) var(--gPadding) 0;
+    padding: pad(2) pad() 0;
 }
 
 .title {
-    font-size: var(--gH4);
+    font-size: H4();
     font-weight: 500;
 }
 
 .sub-title {
-    font-size: var(--gSmall);
+    font-size: T2();
     color: #999999;
-    padding-top: var(--g1);
-    padding-bottom: var(--g4);
+    padding-top: rx(8);
+    padding-bottom: rx(36);
 }
 
 .text > div {
-    padding-bottom: var(--g2);
+    padding-bottom: rx(20);
+    text-align: justify;
+}
+
+.text > div:last-child {
+    padding-bottom: rx(36);
 }
 
 iframe {
     width: 100%;
-    height: var(--g60ch);
-    border-width: var(--g1);
-    border-radius: var(--g2);
+    height: uh(60);
+    border-width: rx(8);
+    border-radius: rx(16);
 }
