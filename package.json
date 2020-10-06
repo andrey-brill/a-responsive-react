@@ -1,6 +1,6 @@
 {
   "name": "a-responsive-react",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Responsive containers for React",
   "main": "entry/entry.js",
   "scripts": {
