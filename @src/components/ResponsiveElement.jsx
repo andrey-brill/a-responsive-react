@@ -28,10 +28,10 @@ export class ResponsiveElement extends React.Component {
         throw new Error('Responsive element is not in any responsive container');
     }
 
-    const { roCreator, roResize } = this.props;
+    const { roCreator, roResize, roElement } = this.props;
     const ro = createRo(roCreator, roResize);
 
-    this.unsubscriber = this.context.register(this.el.current, ro);
+    this.unsubscriber = this.context.register(roElement || this.el.current, ro);
   }
 
   componentWillUnmount () {

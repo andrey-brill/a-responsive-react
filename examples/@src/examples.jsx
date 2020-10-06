@@ -63,10 +63,12 @@ const onParent = (parentContainer, container) => parentContainer.register({
     }
 })
 
+const root = document.getElementById('root');
+
 const App = () => (
     <ResponsiveContainer top={true} listenResizeOf={document.body} roCreator={windowRp}>
         <ResponsiveContainer onParent={onParent}>
-            <ResponsiveElement id="root" roCreator={rootRp}>
+            <ResponsiveElement id="app" roCreator={rootRp} roElement={root}>
                 <div className="menu">
                     <div className="content-container">
                         <div className="content menu-items-container">
@@ -86,8 +88,7 @@ const App = () => (
     </ResponsiveContainer>
 );
 
-// must be window.body for now
-ReactDOM.render(<App/>, document.body);
+ReactDOM.render(<App/>, root);
 
 if (isInIframe()) {
     document.head.parentElement.classList.add('no-scrollbar');
